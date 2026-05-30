@@ -1,7 +1,10 @@
 # Python bytecode and caches
 __pycache__/
 *.py[cod]
+*.pyd
 *$py.class
+__pypackages__/
+.ipynb_checkpoints/
 
 # Virtual environments
 env/
@@ -20,6 +23,7 @@ dist/
 *.egg-info/
 .eggs/
 pip-wheel-metadata/
+coverage.xml
 
 # Test and type-check caches
 .pytest_cache/
