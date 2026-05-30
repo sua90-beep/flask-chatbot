@@ -1,0 +1,38 @@
+{% extends "layout/layout.html" %}
+
+{% block title %}ChatBot - Home{% endblock title %}
+
+{% block extra_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">{% endblock extra_css %}
+
+{% block content %}
+<div
+    class="chat-container"
+    data-reset-url="{% if messages %}/home{% endif %}"
+>
+
+    <div class="chat-messages" id="chatMessages">
+        {% for msg in messages %}
+            <div class="message {{ msg.sender.value }}">
+                <div class="bubble">{{ msg.message_text }}</div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="chat-actions">
+        <a href="/home/new" class="btn-new">New Conversation</a>
+    </div>
+
+    <form class="chat-form" action="/home/send" method="post">
+        <input
+            type="text"
+            name="message"
+            id="messageInput"
+            placeholder="Type your message..."
+            autocomplete="off"
+            required
+        />
+        <button type="submit">Send</button>
+    </form>
+
+</div>
+{% endblock content %}

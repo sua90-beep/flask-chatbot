@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %}</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/CHATICON.png') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block extra_css %}{% endblock extra_css %}
+
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+
+    <div class="layout">
+        <header>
+            {% include "layout/header.html" %}
+        </header>
+        <aside>
+            {% include "layout/menu.html" %}
+        </aside>
+        <main>
+            {% block content %}{% endblock content %}
+        </main>
+        <footer>
+            {% include "layout/footer.html" %}
+        </footer>
+    </div>
+
+</body>
+</html>

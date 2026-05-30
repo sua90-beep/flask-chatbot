@@ -1,0 +1,16 @@
+{% extends "layout/layout.html" %}
+
+{% block title %}ChatBot - About{% endblock title %}
+{% block extra_css %}<link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">{% endblock extra_css %}
+
+{% block content %}
+<div class="about-container">
+    <h2>About</h2>
+    <p>This is a personal ChatGPT-like application built with Python Flask.</p>
+    <p>The application allows users to hold ongoing conversations with an AI assistant powered by OpenAI's API.</p>
+    <p>All conversations are stored in a MySQL database.</p>
+    <hr>
+    <h3>Developer</h3>
+    <p>Built by Suha Younis </p>
+</div>
+{% endblock content %}
